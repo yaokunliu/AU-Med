@@ -31,7 +31,7 @@ do
     OVERRIDES=(
         "dataset=./CV-MedBench/${DATASET}/test"
         "model.path=$MODEL"
-        "subsample_eval_dataset=5"
+        "subsample_eval_dataset=-1"
         "tag=$TAG"
         "hidden_state_layer=$LAYER"
         "report_to_wandb=false"
