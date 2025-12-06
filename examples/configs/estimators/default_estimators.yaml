@@ -1,0 +1,14 @@
+- name: AUProbeEstimator
+  cfg:
+    base_root: ${probe_root}
+    layer: '${hidden_state_layer}'  
+
+
+# - name: MaximumSequenceProbability
+# - name: MeanTokenEntropy
+# - name: SemanticEntropy
+# - name: SAR
+# - name: RAUQ
+#   cfg:
+#     alpha: 0.2
+#     use_entropy: False

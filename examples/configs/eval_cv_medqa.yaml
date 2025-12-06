@@ -1,0 +1,54 @@
+
+hydra:
+  run:
+    dir: ${cache_path}/${task}/${model.path}/${dataset_name}/${tag}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+defaults:
+  - model: bloomz-560m
+  - estimators: default_estimators
+  - stat_calculators: default_calculators
+  - _self_
+
+cache_path: ./workdir/output
+save_path: '${hydra:run.dir}'
+instruct: true
+normalize: true # normalize the output answers by removing punctuation and converting to lowercase
+task: qa
+
+dataset_name: cv_medqa
+dataset: ./CV-MedBench/cv_medqa/test
+text_column: input
+label_column: output
+train_split: train
+eval_split: test
+max_new_tokens: 128   # the length of the generated answer
+load_from_disk: true  # false
+size: 10000
+generation_params:
+  stop_strings:
+    - "\n"
+
+subsample_eval_dataset: -1
+
+ignore_exceptions: false
+
+batch_size: 1
+
+seed:
+    - 2025
+
+generation_metrics:
+  - name: AccuracyMetric
+    kwargs:
+      target_ignore_regex: null
+      output_ignore_regex: null
+      normalize: true
+      mode: choice
+
+report_to_wandb: true
+
+tag: auq
+
+hidden_state_layer: -1
+probe_root: ./hidden_states/probe_results/${model.path}/probe_weights
+
