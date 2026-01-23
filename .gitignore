@@ -181,5 +181,6 @@ wandb
 workdir_arxiv
 CONTRIBUTING.md
 LICENSE.md
+push_cv_medbench_to_hub.py
 # run
 

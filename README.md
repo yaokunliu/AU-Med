@@ -2,10 +2,35 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/IINemo/lm-polygraph/blob/master/LICENSE.md)
 
-This repository contains the code and implementation for the **AU-Probe** module, developed to address critical safety risks posed by **ambiguous user queries** in Medical Question Answering (Medical QA). The core idea is to formalize input ambiguity as **Aleatoric Uncertainty (AU)**, and quantify it efficiently using the Representation Engineering technique.
+This repository contains the official code implementation for the paper:
 
-This work is built upon the open-source [LM-Polygraph](https://github.com/IINemo/lm-polygraph) library (MIT License). All novel methodological contributions (AU-Probe, CV-MedBench dataset, and the AU-Guided Clarify-Before-Answer framework) are original to this project.
+**Mind the Ambiguity: Aleatoric Uncertainty Quantification in LLMs for Safe Medical Question Answering**,  
+in the Proceedings of The Web Conference (WWW) 2026.
 
+The project introduces **AU-Probe**, a lightweight module for quantifying aleatoric uncertainty arising from ambiguous user inputs in Medical Question Answering (Medical QA). By modeling input ambiguity as aleatoric uncertainty and estimating it directly from internal representations of large language models, this work enables early ambiguity detection and supports safer, clarification-aware QA systems.
+
+This codebase is built upon the open-source [LM-Polygraph](https://github.com/IINemo/lm-polygraph) library (MIT License). All methodological contributions presented in the paper—including **AU-Probe**, the **CV-MedBench** dataset, and the **AU-Guided Clarify-Before-Answer** framework—are implemented and released as part of this repository.
+
+## Citation
+
+If you use this code in academic work, please cite:
+
+**Mind the Ambiguity: Aleatoric Uncertainty Quantification in LLMs for Safe Medical Question Answering**  
+Yaokun Liu *et al.*, The Web Conference (WWW) 2026.
+
+---
+
+## Dataset: CV-MedBench
+
+The experiments in this repository are conducted on **CV-MedBench**, a clear-to-vague medical question answering benchmark designed to study input ambiguity and aleatoric uncertainty in Medical QA.
+
+The dataset is publicly available on Hugging Face:
+
+👉 **https://huggingface.co/datasets/yaokunl/CV-MedBench**
+
+CV-MedBench contains paired **clear** and **ambiguous** versions of real medical exam questions derived from MedQA, MedMCQA, and MedExQA, with aligned identifiers to support controlled evaluation under different clarity conditions.  
+
+---
 
 ## 1. Setup and Installation
 
